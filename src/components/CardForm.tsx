@@ -23,9 +23,16 @@ const CardForm: React.FC<Props> = ({}) => {
   const faceioRef = useRef<faceIO | null>(null);
   const [email, setEmail] = useState("");
   const [userLogin, setUserLogin] = useState("");
+
+  // GET YOUR PUBLIC_ID VISIT https://faceio.net/getting-started 
+
+  //   MUST SURE TO ADD YOU NEXT_PUBLIC_FACEIO_PUBLIC_ID IN .env FILE 
+  const publicKey = process.env.NEXT_PUBLIC_FACEIO_PUBLIC_ID as string
+
+
   const initialiseFaceio = async () => {
     try {
-      faceioRef.current = new faceIO("fioa463a");
+      faceioRef.current = new faceIO(publicKey);
       console.log("FaceIO initialized successfully");
     } catch (error) {
       console.log(error);
