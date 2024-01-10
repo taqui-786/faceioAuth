@@ -1,11 +1,18 @@
-import CardForm from '@/components/CardForm'
-import Image from 'next/image'
-import bg from '../../public/wave2bg.png'
+import CardForm from '@/components/FaceioCardForm'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import Link from 'next/link'
+
 export default function Home() {
   return (
-    <main className="h-full w-full flex flex-col items-center justify-center relative">
-      <Image src={bg} alt="background" fill={true} className='-z-10' unoptimized={true}/>
-      <CardForm />
-    </main>
+    
+      <div className="p-4">
+        <h1 className="text-7xl font-medium text-center mb-3">PixLab Demos</h1>
+        <div className="flex gap-3 items-center justify-center">
+        <Link href={'/faceioauth'} className={cn(buttonVariants({variant:'default'}))}>FACIO Authentication Demo</Link>
+        <Link href={'/faceblur'} className={cn(buttonVariants({variant:'default'}))}>Blur Human Faces Demo</Link>
+        <Link href={'/'} className={cn(buttonVariants({variant:'default'}))}>Filter image upload Demo</Link>
+        </div>
+      </div>
   )
 }

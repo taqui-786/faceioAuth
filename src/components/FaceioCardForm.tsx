@@ -19,7 +19,7 @@ import Link from "next/link";
 import { toast } from "sonner";
 type Props = {};
 
-const CardForm: React.FC<Props> = ({}) => {
+const FaceioCardForm: React.FC<Props> = ({}) => {
   const faceioRef = useRef<faceIO | null>(null);
   const [email, setEmail] = useState("");
   const [userLogin, setUserLogin] = useState("");
@@ -238,4 +238,4 @@ const CardForm: React.FC<Props> = ({}) => {
     </>
   );
 };
-export default CardForm;
+export default FaceioCardForm;
