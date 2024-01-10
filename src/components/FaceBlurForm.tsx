@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpFromLine, Loader2, MoveRight } from "lucide-react";
-import { Button, buttonVariants } from "./ui/button";
+import {  buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Image from "next/image";
@@ -34,7 +34,7 @@ const FaceBlurForm: React.FC<Props> = ({}) => {
         const imageUrl = URL.createObjectURL(file);
         setMyImage(imageUrl);
 
-        const imgFile = new File([file], "testing.png", { type: "image/png" });
+        const imgFile = new File([file], file.name, { type: "image/png" || "image/jpeg" });
 
         const formData = new FormData();
         formData.append("file", imgFile);
