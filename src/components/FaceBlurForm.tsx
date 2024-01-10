@@ -39,7 +39,7 @@ const FaceBlurForm: React.FC<Props> = ({}) => {
         const formData = new FormData();
         formData.append("file", imgFile);
 
-        const upload = await fetch("http://localhost:3000/api/blurface", {
+        const upload = await fetch("/api/blurface", {
           method: "POST",
           body: formData,
         });
